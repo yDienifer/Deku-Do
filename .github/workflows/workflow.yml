@@ -1,0 +1,44 @@
+name: dekuDoWorkflow # Define o nome do fluxo de trabalho como "dekuDoWorkflow".
+
+on:
+  pull_request:
+    branches: ['main']
+
+jobs: # Define os trabalhos (jobs) que serão executados neste fluxo de trabalho.
+  dekuDoWork: # Define um trabalho chamado "dekuDoWork".
+    runs-on: arch-latest # Especifica que este trabalho será executado em uma máquina virtual com o sistema operacional Arch Linux mais recente.
+
+    steps: # Define as etapas que o trabalho executará.
+      - name: Checkout repo # Faz o checkout do repositório usando a ação actions/checkout@v4.
+        uses: actions/checkout@v4 # Configura a versão do Node.js usando a ação actions/setup-node@v3 e lendo a versão do arquivo .nvmrc.
+
+      - name: Set node version # Configura a versão do Node.js usando a ação actions/setup-node@v3 e lendo a versão do arquivo .nvmrc.
+        uses: actions/setup-node@v3
+
+        with:
+          node-version: 21.x
+
+      - name: Set pnpm version # Configura a versão do gerenciador de pacotes pnpm usando a ação pnpm/action-setup@v2.
+        uses: pnpm/action-setup@v2
+
+        with:
+          run_install: false
+          version: 7
+
+      - name: Cache node_modules # : Configura um cache para o diretório node_modules usando a ação actions/cache@v3. Isso ajuda a acelerar a instalação de dependências, evitando a necessidade de baixá-las novamente.
+        id: node-modules-cache
+        uses: actions/cache@v3
+
+        with:
+          path: '**/node_modules'
+          key: node-modules-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: pnpm install --no-frozen-lockfile # Instala as dependências usando o comando pnpm install --no-frozen-lockfile apenas se o cache não for atingido.
+
+      - name: Build and test
+        run: |
+          npm run build
+          npm run test
