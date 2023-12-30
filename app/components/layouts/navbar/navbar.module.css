@@ -1,0 +1,43 @@
+.headerContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  padding: var(--padding-medium);
+  position: fixed;
+  top: var(--small-spacing);
+  transform: translateX(-50%);
+  transition: all 0.4s;
+  width: 90vw;
+  z-index: var(--z-index-modal);
+}
+
+.headerContainer #lineOverlay {
+  background-color: var(--section-text-color);
+  opacity: var(--medium-opacity);
+  bottom: 0;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 5vw;
+}
+
+@media screen and (max-width: 768px) {
+  .headerContainer #lineOverlay {
+    display: none;
+  }
+
+  .headerContainer .containerShortcuts {
+    display: none;
+  }
+
+  #introductoryButton {
+    display: none;
+  }
+
+  .headerContainer {
+    top: 0;
+    width: 100%;
+  }
+}

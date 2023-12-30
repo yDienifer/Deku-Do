@@ -1,0 +1,51 @@
+.logoContainer,
+.logoContainer a {
+  align-items: center;
+  display: flex;
+  user-select: none;
+  cursor: pointer;
+}
+
+.logoContainer .containerBrandName {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  position: relative;
+  right: -15px;
+  cursor: pointer;
+}
+
+.logoContainer .containerBrandName #brandName,
+.logoContainer .containerBrandName #trademarkSymbol {
+  color: var(--primary-color);
+  font-family: 'Commando', 'Roboto Condensed', 'Bebas Neue', sans-serif;
+}
+
+.logoContainer .containerBrandName #brandName {
+  font-size: var(--font-size-titles);
+  text-shadow: 0 3px #000000;
+}
+
+.logoContainer .containerBrandName #trademarkSymbol {
+  align-self: baseline;
+  font-size: var(--font-size-tiny-text);
+  margin: var(--tiny-spacing) 0 0 var(--tiny-spacing);
+}
+
+.logoContainer #containerBrandPhrase {
+  color: var(--section-text-color);
+  opacity: 0;
+  position: relative;
+  width: 50%;
+}
+
+.logoContainer #containerBrandPhrase span {
+  font-family: 'Archivo', 'Nunito', 'Montserrat', sans-serif;
+  font-size: var(--font-size-tiny-text);
+}
+
+@media (max-width: 768px) {
+  .logoContainer #containerBrandPhrase {
+    display: none;
+  }
+}
