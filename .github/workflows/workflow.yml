@@ -10,10 +10,10 @@ jobs: # Define os trabalhos (jobs) que serão executados neste fluxo de trabalho
 
     steps: # Define as etapas que o trabalho executará.
       - name: Checkout repo # Faz o checkout do repositório usando a ação actions/checkout@v4.
-        uses: actions/checkout@v4 # Configura a versão do Node.js usando a ação actions/setup-node@v3 e lendo a versão do arquivo .nvmrc.
+        uses: actions/checkout@v4 # Configura a versão do Node.js usando a ação actions/setup-node@v4 e lendo a versão do arquivo .nvmrc.
 
-      - name: Set node version # Configura a versão do Node.js usando a ação actions/setup-node@v3 e lendo a versão do arquivo .nvmrc.
-        uses: actions/setup-node@v3
+      - name: Set node version # Configura a versão do Node.js usando a ação actions/setup-node@v4 e lendo a versão do arquivo .nvmrc.
+        uses: actions/setup-node@v4
 
         with:
           node-version: 21.x
