@@ -1,0 +1,222 @@
+@font-face {
+  font-family: 'Commando';
+  src: url('/font/commando/commando.ttf');
+}
+
+:root {
+  --transition-standard: 0.3s ease-in-out;
+}
+
+:root {
+  --asymmetric-rounding: 1rem 0.5rem;
+  --border-radius-default: 1rem;
+  --circular-border: 10em;
+  --low-opacity: 0.3;
+  --medium-opacity: 0.5;
+  --rounded-edges: 0.4rem;
+  --strong-opacity: 0.7;
+  --ultra-low-opacity: 0.1;
+}
+
+:root {
+  --subtle-text-shadow: 1px 1px 0px rgba(48, 48, 48, 0.411);
+}
+
+:root {
+  --font-size-h2: clamp(1.5rem, 4vw, 1.67vmax);
+  --font-size-h3: clamp(1.2rem, 3vw, 1.39vmax);
+  --font-size-medium-text: clamp(1.4rem, 2vw, 1.112vmax);
+  --font-size-small-text: clamp(1.2rem, 4vw, 0.98vmax);
+  --font-size-tiny-text: 1.2rem;
+  --font-size-titles: clamp(2.5rem, 5vw, 2.37vmax);
+}
+
+:root {
+  --large-spacing: 3rem;
+  --medium-spacing: 2rem;
+  --padding-card: 1.6rem;
+  --padding-large: 3rem;
+  --padding-medium: 2.5rem;
+  --padding-section: 2rem;
+  --padding-small: 1.5rem;
+  --padding-tiny: 0.5rem;
+  --small-spacing: 1rem;
+  --tiny-spacing: 0.5rem;
+}
+
+:root {
+  --z-index-modal: 1000;
+}
+
+:root {
+  --accent-color: #fcfefc;
+  --background-color: #010101;
+  --highlight-color: #5da684;
+  --primary-color: #025159;
+  --section-text-color: #d6d6d6cc;
+  --secondary-color: #027373;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body h1 {
+  color: var(--primary-color);
+  font-family: 'Commando', 'Roboto Condensed', 'Bebas Neue', sans-serif;
+  text-shadow: 1px 1px 1px #000000;
+}
+
+body p {
+  font-size: var(--font-size-small-text);
+  font-weight: 600;
+}
+
+.elementShortcut,
+body a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body ul a,
+body ul li {
+  color: var(--accent-color);
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--asymmetric-rounding);
+  cursor: pointer;
+  filter: drop-shadow(1px 1px 8px var(--primary-color));
+  padding: var(--padding-small) var(--padding-large);
+  position: relative;
+  top: 0;
+  transform: scale(0.96);
+  transition: var(--transition-standard);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+  filter: drop-shadow(1px 1px 8px var(--primary-color));
+  top: -2px;
+  transition: var(--transition-standard);
+}
+
+button:hover::after {
+  animation: greenbottomBubbles var(--transition-standard);
+  background-image: radial-gradient(
+      circle,
+      var(--primary-color) 20%,
+      transparent 20%
+    ),
+    radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
+    radial-gradient(
+      circle,
+      transparent 10%,
+      var(--primary-color) 15%,
+      transparent 20%
+    ),
+    radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
+    radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
+    radial-gradient(circle, var(--primary-color) 20%, transparent 20%),
+    radial-gradient(circle, var(--primary-color) 20%, transparent 20%);
+  background-position: 50% 0%;
+  background-size:
+    15% 15%,
+    20% 20%,
+    18% 18%,
+    20% 20%,
+    15% 15%,
+    20% 20%,
+    18% 18%;
+  bottom: -70%;
+}
+
+button:after {
+  background-repeat: no-repeat;
+  content: '';
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 150%;
+  z-index: var(--z-index-modal);
+}
+
+button a {
+  color: var(--section-text-color);
+  font-size: var(--font-size-small-text);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-shadow: var(--subtle-text-shadow);
+  text-transform: uppercase;
+  transition: var(--transition-standard);
+}
+
+button:hover a {
+  color: var(--accent-color);
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position:
+      10% -10%,
+      30% 10%,
+      55% -10%,
+      70% -10%,
+      85% -10%,
+      70% -10%,
+      70% 0%;
+  }
+
+  50% {
+    background-position:
+      0% 80%,
+      20% 80%,
+      45% 60%,
+      60% 100%,
+      75% 70%,
+      95% 60%,
+      105% 0%;
+  }
+
+  100% {
+    background-position:
+      0% 90%,
+      20% 90%,
+      45% 70%,
+      60% 110%,
+      75% 80%,
+      95% 70%,
+      110% 10%;
+    background-size:
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%;
+  }
+}
