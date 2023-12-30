@@ -1,0 +1,70 @@
+.containerShorcutsPc,
+.containerShortcutsMobile {
+  font-size: var(--font-size-medium-text);
+}
+
+.containerShortcutsMobile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-spacing);
+  margin: var(--medium-spacing) 0;
+}
+
+.containerShorcutsPc {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--font-size-medium-text);
+  gap: var(--large-spacing);
+  position: relative;
+}
+
+.containerDropdownMobile {
+  display: none;
+  gap: var(--small-spacing);
+  margin-top: var(--small-spacing);
+}
+
+.containerDropdownPc {
+  background: var(--background-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--asymmetric-rounding);
+  box-shadow: 0 8px 32px 0 #0273738e;
+  display: none;
+  gap: var(--small-spacing);
+  padding: var(--padding-section);
+  position: absolute;
+  top: -50px;
+  z-index: var(--z-index-modal);
+}
+
+.containerDropdownPc a,
+.containerDropdownPc li,
+.containerDropdownMobile a,
+.containerDropdownMobile li {
+  font-size: var(--font-size-small-text);
+}
+
+.containerShortcutDropdown,
+#dropdownArrowIcon {
+  align-items: flex-end;
+  display: flex;
+}
+
+.containerShortcutDropdown #dropdownArrowIcon {
+  margin-left: var(--tiny-spacing);
+  transform: rotate(0);
+}
+
+.containerShorcutsPc ul li a {
+  transform: var(--transition-standard);
+  color: var(--accent-color);
+}
+
+.hoverElementShortcut:hover {
+  color: var(--highlight-color);
+}
+
+.activeElementShortcut {
+  color: var(--section-text-color);
+}
