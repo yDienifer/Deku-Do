@@ -58,7 +58,7 @@ const IconHamburger: React.FC<IconHamburgerProps> = ({
           });
         }
       }
-    }, [isColumnFormatOpen]);
+    }, [elements]);
 
     return () => toggleIconHamburger.revert();
   }, [isColumnFormatOpen]);
