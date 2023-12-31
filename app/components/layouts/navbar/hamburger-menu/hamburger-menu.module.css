@@ -1,0 +1,21 @@
+.container-hamburger-menu {
+  background: var(--background-color);
+  bottom: 0;
+  display: none;
+  height: clamp(350px, 45vh, 450px);
+  left: 0;
+  padding: var(--padding-large) var(--padding-section) var(--padding-section)
+    var(--padding-section);
+  position: absolute;
+  width: 100%;
+}
+
+.container-hamburger-menu #mobileIntroButton {
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container-hamburger-menu span {
+  font-size: var(--font-size-medium-text);
+}

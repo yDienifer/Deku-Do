@@ -1,0 +1,43 @@
+{
+  "Shortcuts": [
+    {
+      "id": 0,
+      "shortcut_title": "Início",
+      "shortcut_link": "/"
+    },
+    {
+      "id": 1,
+      "shortcut_title": "Sobre nós",
+      "shortcut_link": "/about-us"
+    },
+    {
+      "id": 3,
+      "shortcut_title": "Contate-me",
+      "Dropdown": [
+        {
+          "id": 0,
+          "sub_shortcut_title": "Github",
+          "sub_shortcut_link": "https://github.com/yDienifer",
+          "sub_shorcut_data_testid": "shortcutGithub"
+        },
+        {
+          "id": 1,
+          "sub_shortcut_title": "LinkedIn",
+          "sub_shortcut_link": "https://www.linkedin.com/in/di%C3%AAnifer-siqueira-08b4aa247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          "sub_shorcut_data_testid": "shortcutLinkedIn"
+        },
+        {
+          "id": 2,
+          "sub_shortcut_title": "Instagram",
+          "sub_shortcut_link": "https://instagram.com/dienifer.dev?igshid=NzZlODBkYWE4Ng==",
+          "sub_shorcut_data_testid": "shortcutInstagram"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "shortcut_title": "Suporte",
+      "shortcut_link": "/suport"
+    }
+  ]
+}

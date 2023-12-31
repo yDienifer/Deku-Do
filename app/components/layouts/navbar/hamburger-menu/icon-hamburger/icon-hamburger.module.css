@@ -1,0 +1,21 @@
+.container-icon-hamburger {
+  display: none;
+  z-index: var(--z-index-modal);
+}
+
+.container-icon-hamburger #line-one,
+.container-icon-hamburger #line-two,
+.container-icon-hamburger #line-three {
+  background-color: var(--accent-color);
+  height: 2px;
+  width: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .container-icon-hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
